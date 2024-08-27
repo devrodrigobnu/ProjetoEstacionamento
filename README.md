@@ -23,7 +23,7 @@ Para executar a aplicação devem-se utilizar os seguintes programas/comandos.
       -dotnet add package Microsoft.EntityFrameworkCore
       -dotnet add package Microsoft.EntityFrameworkCore.Design
       -dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-      -dotnet run (Obrigatóriamente precisa estar na pasta do projeto: "\ProjetoEstacionamento\Estacionamento\Estacionamento")
+      -dotnet run (Obrigatóriamente precisa estar na pasta do projeto)
 
 # Frontend: Visual studio code - Rodar a IDE dentro do projeto
       Executar:
