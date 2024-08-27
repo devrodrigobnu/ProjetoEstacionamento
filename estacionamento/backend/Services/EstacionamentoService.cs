@@ -31,6 +31,7 @@ namespace backend.Repositories
                 throw new ArgumentException(nameof(placa));
             }
 
+            placa = placa.ToUpperInvariant();
             var entradaExistente = await _context.Estacionamento
                 .FirstOrDefaultAsync(e => e.Veiculo.Placa == placa && e.DataSaida == null);
 
@@ -84,6 +85,8 @@ namespace backend.Repositories
                 throw new ArgumentException(nameof(dataSaida));
             }
 
+            placa = placa.ToUpperInvariant();
+
             var entrada = await _context.Estacionamento
                 .FirstOrDefaultAsync(e => e.Veiculo.Placa == placa && e.DataSaida == null);
 
@@ -106,6 +109,7 @@ namespace backend.Repositories
 
         public async Task<bool> RemoverVeiculoPorPlacaAsync(string placa)
         {
+            placa = placa.ToUpperInvariant();
             var veiculo = await _context.Veiculo.FirstOrDefaultAsync(v => v.Placa == placa);
 
             if (veiculo == null)
@@ -120,6 +124,8 @@ namespace backend.Repositories
 
         public async Task<bool> AtualizarPlacaVeiculosAsync(string placaAntiga, string placaNova)
         {
+            placaAntiga = placaAntiga.ToUpperInvariant();
+            placaNova = placaNova.ToUpperInvariant();
             var veiculo = await _context.Veiculo.FirstOrDefaultAsync(v => v.Placa == placaAntiga);
 
             if (veiculo == null)
@@ -135,6 +141,7 @@ namespace backend.Repositories
 
         public async Task<double> CalcularPrecoVeiculoAsync(string placa)
         {
+            placa = placa.ToUpperInvariant();
             var registro = await _context.Estacionamento
                 .Include(e => e.Veiculo)
                 .FirstOrDefaultAsync(e => e.Veiculo.Placa == placa && e.DataSaida != null);
