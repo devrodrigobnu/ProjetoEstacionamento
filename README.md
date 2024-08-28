@@ -1,33 +1,59 @@
 # Projeto de Estacionamento
 
-Solução do desafio:
+## Solução do Desafio
 
-Para elaboração do desafio, foram utilizados:
+Este projeto é um sistema de gerenciamento de estacionamento. Abaixo estão os detalhes da implementação:
 
-    -Banco de dados: sqlite3
-    -BackEnd: Aps/Net, C#
-    -FrontEnd: Vue.js
+### Tecnologias Utilizadas
 
-Visão geral: Os registros são cadastrados e buscados no banco de dados SQLITE3, feito através de migrations via api.
-Api é responsável por buscar e cadastras as informações no banco de dados.
-No front-end o usuário pode cadastrar, atualizar, deletar e finalizar a saída do veiculo do estacionamento, fiz o cálculo da tarifa pelo front.
+- **Banco de Dados**: SQLite
+- **Back-End**: ASP.NET Core, C#
+- **Front-End**: Vue.js
 
-As requisições da API foram testadas via Postman, verificando o retorno das mesmas.
+### Visão Geral
 
-Considerações finais:
-Para executar a aplicação devem-se utilizar os seguintes programas/comandos.
+O sistema permite aos usuários cadastrar, atualizar, deletar e finalizar a saída de veículos do estacionamento. O fluxo de trabalho inclui:
 
-# Backend: Visual Studio 2022 (versão 8) - Rodar o arquivo Estacionamento.sln e se tiver dificuldades pra instalar as dependências, tem opção de instalar direto no NuGet dentro do visual studio.
-    Executar:
-      -dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
-      -dotnet add package Microsoft.EntityFrameworkCore
-      -dotnet add package Microsoft.EntityFrameworkCore.Design
-      -dotnet add package Microsoft.EntityFrameworkCore.Sqlite
-      -dotnet run (Obrigatóriamente precisa estar na pasta do projeto)
+1. **Cadastro e Busca de Registros**: Os dados são armazenados e recuperados do banco de dados SQLite através de migrações e APIs.
+2. **API**: O backend é responsável por expor APIs para operações CRUD e calcular tarifas de estacionamento.
+3. **Front-End**: Implementado em Vue.js, permitindo interação do usuário com o sistema, incluindo o cálculo de tarifas no front-end.
 
-# Frontend: Visual studio code - Rodar a IDE dentro do projeto
-      Executar:
-       -npm install (instalar as dependências)
-       -npm run dev (rodar o programa)
+As requisições da API foram testadas com Postman e os mesmos foram positivos.
 
-Navegação: via Chrome ou outro navegador, caminho: http://127.0.0.1:5173/ (préviamente configurado no json)
+### Arquitetura
+
+#### Back-End
+
+O back-end foi desenvolvido com ASP.NET Core, utilizando Entity Framework Core para interagir com o banco de dados SQLite.
+
+- **Entity Framework Core**: Utilizado para gerenciar o contexto do banco de dados e as migrações.
+- **Migrations**: Gerencia as mudanças no esquema do banco de dados.
+
+#### Front-End
+
+O front-end foi desenvolvido com Vue.js e comunica-se com o back-end através de chamadas API. As funcionalidades incluem:
+
+- Cadastro de veículos
+- Atualização de registros
+- Exclusão de veículos
+- Finalização da saída e cálculo de tarifas
+
+### Considerações Finais
+
+Para executar o projeto, siga as instruções abaixo:
+
+#### Back-End
+
+1. **Configuração**: Utilize o Visual Studio 2022 (versão 8) para abrir o arquivo `Estacionamento.sln`.
+2. **Instalação de Dependências**:
+   ```bash
+   dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+   dotnet add package Microsoft.EntityFrameworkCore
+   dotnet add package Microsoft.EntityFrameworkCore.Design
+   dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+   dotnet run
+
+#### Front-End
+    npm install
+    npm run dev
+
