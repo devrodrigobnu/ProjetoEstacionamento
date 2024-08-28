@@ -15,7 +15,7 @@ Este projeto é um sistema de gerenciamento de estacionamento. Abaixo estão os 
 O sistema permite aos usuários cadastrar, atualizar, deletar e finalizar a saída de veículos do estacionamento. O fluxo de trabalho inclui:
 
 1. **Cadastro e Busca de Registros**: Os dados são armazenados e recuperados do banco de dados SQLite através de migrações e APIs.
-2. **API**: O backend é responsável por expor APIs para operações CRUD e calcular tarifas de estacionamento.
+2. **API**: O backend oferece APIs que permitem criar, ler, atualizar e excluir dados dos veículos e calcular o valor da tarifa de estacionamento.
 3. **Front-End**: Implementado em Vue.js, permitindo interação do usuário com o sistema, incluindo o cálculo de tarifas no front-end.
 
 As requisições da API foram testadas com Postman e os mesmos foram positivos.
